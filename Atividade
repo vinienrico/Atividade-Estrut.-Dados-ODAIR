@@ -1,0 +1,35 @@
+ Variáveis:
+        S: Array (vetor) para armazenar os elementos da pilha
+        t: Inteiro, índice do topo da pilha (-1 se a pilha estiver vazia)
+        N: Inteiro, tamanho máximo da pilha
+
+    Função size():
+        Retornar t + 1
+
+    Função isEmpty():
+        Retornar (t < 0)
+
+    Função top():
+        Se isEmpty() então:
+            Lançar exceção EmptyStackException
+        Senão:
+            Retornar S[t]
+
+    Função push(e):
+        Se size() = N então:
+            Lançar exceção FullStackException
+        Senão:
+            t ← t + 1
+            S[t] ← e
+
+    Função pop():
+        Se isEmpty() então:
+            Lançar exceção EmptyStackException
+        Senão:
+            e ← S[t]
+            S[t] ← nulo  // ou remover a referência, dependendo da implementação
+            t ← t - 1
+            Retornar e
+
+O algoritmo é uma pilha, porque segue a regra "último a entrar, primeiro a sair" (LIFO), onde a adição (push) e remoção (pop) de elementos ocorrem a
+penas no topo, controlado pela variável t, garantindo que o último elemento inserido seja sempre o primeiro a ser retirado.
